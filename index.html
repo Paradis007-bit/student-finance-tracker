@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Finance Tracker</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <h1>Student Finance Tracker</h1>
+    <nav class="top-nav" aria-label="Main">
+      <button id="settingsToggle" aria-label="Open settings" aria-expanded="false" class="hamburger">☰</button>
+    </nav>
+  </header>
+
+  <!-- Overlay for small screens when settings open -->
+  <div id="overlay" class="overlay hidden" tabindex="-1" aria-hidden="true"></div>
+
+  <!-- Settings panel -->
+  <aside id="settingsPanel" class="settings-panel" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="settings-inner">
+      <button id="settingsClose" class="close-btn" aria-label="Close settings">✕</button>
+      <h2>Settings</h2>
+
+      <label for="currencyInput">Base Currency</label>
+      <input id="currencyInput" type="text" maxlength="3" value="USD" />
+
+      <label for="importFile">Import JSON</label>
+      <input id="importFile" type="file" accept=".json" />
+
+      <button id="exportBtn">Export JSON</button>
+      <p id="settingsStatus" role="status" aria-live="polite"></p>
+    </div>
+  </aside>
+
+  <main id="main" tabindex="-1">
+    <!-- Add form is the only visible section initially -->
+    <section id="formSection" class="card">
+      <h2>Add Transaction</h2>
+      <form id="addForm" novalidate>
+        <label>
+          Description
+          <input name="description" id="f_description" type="text" required />
+          <div class="error" id="err_description" aria-live="polite"></div>
+        </label>
+
+        <label>
+          Amount
+          <input name="amount" id="f_amount" type="number" step="0.01" required />
+          <div class="error" id="err_amount" aria-live="polite"></div>
+        </label>
+
+        <label>
+          Category
+          <input name="category" id="f_category" type="text" required />
+          <div class="error" id="err_category" aria-live="polite"></div>
+        </label>
+
+        <label>
+          Date
+          <input name="date" id="f_date" type="date" required />
+          <div class="error" id="err_date" aria-live="polite"></div>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" id="addBtn">Add</button>
+          <button type="button" id="clearBtn" class="secondary">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Hidden by default; shown after first successful add -->
+    <section id="dashboard" class="card hidden" aria-live="polite">
+      <h2>Dashboard</h2>
+      <p>Total Transactions: <strong id="totalCount">0</strong></p>
+      <p>Total Amount: $<strong id="totalAmount">0.00</strong></p>
+      <p>Top Category: <strong id="topCategory">—</strong></p>
+      <label for="capInput">Monthly Cap</label>
+      <input id="capInput" type="number" step="0.01" placeholder="e.g. 500" />
+      <p id="capStatus" role="status" aria-live="assertive"></p>
+    </section>
+
+    <section id="search" class="card hidden">
+      <label for="searchInput">Search (regex)</label>
+      <input id="searchInput" type="text" placeholder="e.g. (coffee|tea)" />
+      <label class="inline">
+        <input id="caseInsensitive" type="checkbox" checked /> Case-insensitive
+      </label>
+      <p id="searchStatus" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="records" class="records-grid hidden" aria-live="polite">
+      <!-- cards injected here -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Student Finance Tracker | <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script type="module" src="scripts/app.js"></script>
+</body>
+</html>

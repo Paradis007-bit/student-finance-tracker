@@ -1,0 +1,168 @@
+/* ================== Base & Reset ================== */
+* { box-sizing: border-box; }
+html,body { height: 100%; }
+body {
+  margin: 0;
+  padding: 0.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #121212;
+  color: #e0e0e0;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Header & nav */
+.site-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:1rem;
+  background:#1f1f1f;
+  border-radius:8px;
+}
+.site-header h1 { margin:0; font-size:1.25rem; }
+.top-nav { position:relative; }
+
+/* Skip link */
+.skip-link {
+  position:absolute; left:-999px;
+}
+.skip-link:focus { left:1rem; top:0.75rem; background:#ffeb3b; color:#000; padding:0.4rem; border-radius:4px; }
+
+/* Buttons */
+button {
+  padding:10px 14px;
+  font-size:1rem;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  background:#bb86fc;
+  color:#000;
+  transition: transform .12s ease, background-color .12s ease;
+}
+button.secondary {
+  background:transparent;
+  border:1px solid #444;
+  color:#e0e0e0;
+}
+button:focus { outline:3px solid #bb86fc; outline-offset:2px; transform:translateY(-1px); }
+.close-btn { position:absolute; right:8px; top:8px; background:transparent; color:#e0e0e0; padding:6px 8px; }
+
+/* Layout & cards */
+main { max-width:1200px; margin:1rem auto; }
+.card {
+  background:#1e1e1e;
+  border:1px solid #333;
+  padding:1rem;
+  border-radius:8px;
+  margin-bottom:1rem;
+}
+
+/* Form */
+#formSection input,
+#settingsPanel input,
+#search input,
+#capInput {
+  width:100%;
+  padding:12px;
+  border-radius:6px;
+  border:1px solid #444;
+  background:#2c2c2c;
+  color:#e0e0e0;
+  font-size:1rem;
+}
+label { display:block; margin:0.6rem 0; }
+.error { color:#ffb4b4; font-size:.9rem; min-height:1.1rem; }
+
+/* Records grid responsive */
+.records-grid {
+  display:grid;
+  grid-template-columns: 1fr; /* mobile */
+  gap:1rem;
+  margin-top:0.5rem;
+}
+.record-card {
+  background:#1c1c1c;
+  border:1px solid #333;
+  padding:1rem;
+  border-radius:8px;
+}
+.record-card h3 { margin:0 0 .5rem 0; font-size:1rem; }
+.record-meta { font-size:.95rem; color:#cfcfcf; margin-top:0.5rem; display:flex; gap:0.75rem; flex-wrap:wrap; }
+.actions { margin-top:.75rem; display:flex; gap:0.5rem; }
+.edit-btn { background:#4caf50; color:#fff; }
+.delete-btn { background:#e53935; color:#fff; }
+
+/* Hidden helper */
+.hidden { display:none !important; }
+
+/* Overlay for small screen when settings open */
+.overlay {
+  position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:900;
+}
+.overlay.hidden { display:none; }
+
+/* Settings panel - mobile slide-in; desktop popup */
+.settings-panel {
+  --w:320px;
+  position:fixed;
+  top:0;
+  right:0;
+  width:var(--w);
+  max-width:90%;
+  height:100%;
+  background:#1e1e1e;
+  border-left:1px solid #333;
+  padding:1rem;
+  transform: translateX(110%); /* hidden by default */
+  transition: transform .28s cubic-bezier(.2,.8,.2,1);
+  z-index:1000;
+  box-shadow:-6px 0 18px rgba(0,0,0,0.5);
+  overflow:auto;
+}
+.settings-panel.active {
+  transform: translateX(0);
+}
+.settings-inner { position:relative; padding-top:1.5rem; }
+
+/* Desktop: pop-up style */
+@media (min-width:1024px) {
+  .settings-panel {
+    position: absolute;
+    top:72px;
+    right:1rem;
+    height:auto;
+    width:360px;
+    transform: translateY(-10px) scale(.98);
+    opacity:0;
+    transition: transform .18s ease, opacity .18s ease;
+    border-radius:8px;
+  }
+  .settings-panel.active {
+    transform: translateY(0) scale(1);
+    opacity:1;
+  }
+  .overlay { display:none; } /* no page overlay on desktop */
+}
+
+/* Search input inline label */
+.inline { display:flex; align-items:center; gap:0.5rem; }
+
+/* Grid breakpoints: tablet 2 columns, desktop 4 columns */
+@media (min-width:768px) {
+  .records-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width:1024px) {
+  .records-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Highlights */
+mark {
+  background:#ffeb3b;
+  color:#000;
+  padding:0 3px;
+  border-radius:3px;
+}
+
+/* Footer */
+.site-footer { text-align:center; margin-top:1.25rem; color:#bfbfbf; }

@@ -1,0 +1,102 @@
+[
+    {
+      "id": "txn_001",
+      "description": "Lunch at cafeteria",
+      "amount": 12.50,
+      "category": "Food",
+      "date": "2025-09-01",
+      "createdAt": "2025-09-01T12:00:00Z",
+      "updatedAt": "2025-09-01T12:00:00Z"
+    },
+    {
+      "id": "txn_002",
+      "description": "Chemistry textbook",
+      "amount": 89.99,
+      "category": "Books",
+      "date": "2025-09-03",
+      "createdAt": "2025-09-03T08:30:00Z",
+      "updatedAt": "2025-09-03T08:30:00Z"
+    },
+    {
+      "id": "txn_003",
+      "description": "Bus pass",
+      "amount": 45.00,
+      "category": "Transport",
+      "date": "2025-09-05",
+      "createdAt": "2025-09-05T09:00:00Z",
+      "updatedAt": "2025-09-05T09:00:00Z"
+    },
+    {
+      "id": "txn_004",
+      "description": "Coffee with friends",
+      "amount": 8.75,
+      "category": "Entertainment",
+      "date": "2025-09-06",
+      "createdAt": "2025-09-06T15:45:00Z",
+      "updatedAt": "2025-09-06T15:45:00Z"
+    },
+    {
+      "id": "txn_005",
+      "description": "Library late fee",
+      "amount": 3.25,
+      "category": "Fees",
+      "date": "2025-09-07",
+      "createdAt": "2025-09-07T10:20:00Z",
+      "updatedAt": "2025-09-07T10:20:00Z"
+    },
+    {
+      "id": "txn_006",
+      "description": "Grocery shopping",
+      "amount": 102.30,
+      "category": "Food",
+      "date": "2025-09-10",
+      "createdAt": "2025-09-10T18:15:00Z",
+      "updatedAt": "2025-09-10T18:15:00Z"
+    },
+    {
+      "id": "txn_007",
+      "description": "Concert tickets",
+      "amount": 150.00,
+      "category": "Entertainment",
+      "date": "2025-09-12",
+      "createdAt": "2025-09-12T20:00:00Z",
+      "updatedAt": "2025-09-12T20:00:00Z"
+    },
+    {
+      "id": "txn_008",
+      "description": "Coffee coffee meeting",
+      "amount": 5.50,
+      "category": "Food",
+      "date": "2025-09-14",
+      "createdAt": "2025-09-14T09:30:00Z",
+      "updatedAt": "2025-09-14T09:30:00Z"
+    },
+    {
+      "id": "txn_009",
+      "description": "Online course subscription",
+      "amount": 29.99,
+      "category": "Other",
+      "date": "2025-09-15",
+      "createdAt": "2025-09-15T11:00:00Z",
+      "updatedAt": "2025-09-15T11:00:00Z"
+    },
+    {
+      "id": "txn_010",
+      "description": "Math notebook",
+      "amount": 6.80,
+      "category": "Books",
+      "date": "2025-09-16",
+      "createdAt": "2025-09-16T13:00:00Z",
+      "updatedAt": "2025-09-16T13:00:00Z"
+    },
+    {
+      "id": "txn_011",
+      "description": "Weekend trip",
+      "amount": 220.00,
+      "category": "Transport",
+      "date": "2025-09-18",
+      "createdAt": "2025-09-18T07:00:00Z",
+      "updatedAt": "2025-09-18T07:00:00Z"
+    }
+  ]
+  
